@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function soloEntero(e){
+                var keynum;
+            if(window.event)
+                keynum = e.keyCode;
+            else 
+                if (e.which)
+                    keynum=e.which;
+            
+            if ((keynum>=48&&keynum<=57) || keynum === 8)
+                return true;
+            else
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Se crea el diseño de la pagina -->
+        <form name="forumulario" method="post" action="operacione">
+            Numero 1 
+            <input type="text" name="num1" onkeypress="return soloEntero(event)">
+            &nbsp;
+            Numero 2
+            <input type="text" name="num2" onkeypress="return soloEntero(event)">
+            <br>
+            <br>
+            <input type="submit" name="sum" 
+                   value="Suma">
+            &nbsp;
+            <input type="submit" name="res"  
+                   value="Resta">
+            &nbsp;
+            <input type="submit" name="mul"  
+                   value="Multiplicacion">
+            &nbsp;
+            <!-- Se inicializa el servlet -->
+            <input type="submit" name="div" 
+                   value="Division">
+        </form>
+
+    </body>
+</html>
